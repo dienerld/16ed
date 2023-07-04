@@ -1,0 +1,35 @@
+Título da página: Relembrando - Growdev
+
+[AQUI VAI UM LINK PARA A PÁGINA "home.html"]
+[AQUI VAI UM LINK PARA A PÁGINA "fullstack.html"]
+[AQUI VAI UM LINK PARA A PÁGINA "https://www.growdev.com.br/starter-uxui"]
+[AQUI VAI UM LINK PARA A PÁGINA "https://www.growdev.com.br/starter-data-science"]
+[AQUI VAI UM LINK PARA A PÁGINA "https://www.growdev.com.br/advanced"]
+
+[AQUI VAI UMA IMAGEM "growdev.png"]
+
+Nosso propósito é acelerar a entrada de pessoas da área de produtos digitais no mercado de trabalho.
+
+Somos uma empresa de tecnologia com o propósito de mudar a vida de pessoas e organizações, formando profissionais capacitados para ingressar no mercado de desenvolvimento de produtos digitais. Seus fundadores, Manoel Roldão e Marcelo Eltz, após muitos anos desenvolvendo software, formando e selecionando profissionais de TI, perceberam que poderiam contribuir para a diminuição do déficit de mão de obra na área de tecnologia e, também, ajudar as empresas a reduzirem seus riscos e custos com contratações.
+
+[AQUI VAI UMA IMAGEM "growdev1.png"]
+
+Nossa missão
+Mudar a vida de pessoas e organizações, formando profissionais capacitados para ingressar no mercado de desenvolvimento de produtos digitais.
+[AQUI VAI UMA IMAGEM "growdev2.png"]
+
+Nossos valores
+Somos feitos de pessoas e o respeito é a nossa prioridade. Estamos em constante movimento, acreditamos na evolução contínua. Trabalhamos com confiança, mantendo um ambiente seguro, acolhedor e de comprometimento. Prezamos pela excelência, norteamos as nossas ações com zelo e responsabilidade.
+[AQUI VAI UMA IMAGEM "growdev3.png"]
+
+
+Nossa cultura
+Trabalhamos com seriedade e com base em nossos valores para entregar aquilo com o que nos comprometemos, transformar a vida daqueles que confiam o seu futuro conosco, através de uma educação de qualidade e oportunidades.
+[AQUI VAI UMA IMAGEM "growdev4.png"]
+
+
+Somos profissionais apaixonados por tecnologia e educação, buscando constantemente melhorias e maior qualidade para nossos alunos.
+[AQUI VAI UMA IMAGEM "growdev5.png"]
+
+
+2022 Growdev. All rights reserved [AQUI VAI UM LINK "https://www.growdev.com.br"]

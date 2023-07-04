@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Aula 03-07-2023 - CSS</title>
+    </head>
+
+    <style>
+        #p1 {
+            color: blue;
+        }
+
+        .paragrafo {
+            color: red;
+        }
+
+        span {
+            color: green;
+        }
+
+        .red {
+            color: red;
+        }
+
+        ul {
+            background-color: #888;
+            color: #fff;
+            list-style: circle;
+        }
+
+        #titulo {
+            text-transform: uppercase;
+        }
+
+        .altura100px {
+            height: 100px;
+        }
+
+        .largura200px {
+            width: 300px;
+        }
+
+        #texto {
+            background-color: darksalmon;
+            padding: 10px 8px 30px 20px;
+            margin: 0px;
+
+            border: 10px solid darkgray;
+        }
+    </style>
+
+    <body>
+        <main>
+            <h1 id="titulo">Css</h1>
+
+            <section>
+                <h2>Seletores</h2>
+                tag - id - class
+
+                <hr />
+
+                <h3>Tag</h3>
+                <span>
+                    Para estilizar todos as ocorrências de uma tag podemos
+                    passar apenas a tag(elemento) dentro do css e definir nossos
+                    estilos Por exemplo -
+                    <em class="red"> span {color: green;} </em>
+                </span>
+
+                <hr />
+
+                <h3>Id</h3>
+                <p id="p1">
+                    Para estilizar um item com id devemos usar o prefixo # antes
+                    do id - por exemplo este paragrafo tem o id p1. Para
+                    estiliza-lo devo usar <span class="red"> #p1 </span> para
+                    seleciona-lo para estilização
+                </p>
+
+                <hr />
+
+                <h3>Class</h3>
+                <p class="paragrafo">
+                    Para estilizar um item com class devemos usar o prefixo
+                    &gt;<em>.</em>&lt; antes do nome da classe - por exemplo
+                    este paragrafo tem a classe paragrafo. Para estiliza-lo devo
+                    usar
+                    <em>.paragrafo </em>para seleciona-lo para estilização
+                </p>
+            </section>
+
+            <hr />
+            <section>
+                <h2>Propriedades Css</h2>
+
+                <ul class="altura100px largura200px">
+                    <li>height - Definir altura</li>
+                    <li>width - Definir largura</li>
+                    <li>color - Definir cor</li>
+                    <li>background-color - Definir cor de fundo</li>
+                </ul>
+            </section>
+
+            <hr />
+
+            <p id="texto">conteúdo</p>
+        </main>
+    </body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+
+        <style>
+            body {
+                margin: 20px;
+            }
+
+            table {
+                border: 1px solid #000;
+                border-collapse: collapse;
+                width: 100%;
+            }
+
+            th,
+            td {
+                border: 1px solid #000;
+                padding: 16px;
+            }
+
+            tr {
+                border: 1px solid #000;
+            }
+
+            .center {
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <header class="center">
+            <h1>Plano de Estudo</h1>
+            <img src="./images/image-bonita.png" alt="" width="300px" />
+        </header>
+
+        <main>
+            <table>
+                <thead>
+                    <tr>
+                        <th>
+                            <img
+                                src="./images/horario.png"
+                                alt=""
+                                width="50px"
+                            />
+                        </th>
+                        <th>SEGUNDA</th>
+                        <th>TERÇA</th>
+                        <th>QUARTA</th>
+                        <th>QUINTA</th>
+                        <th>SEXTA</th>
+                        <th>SÁBADO</th>
+                        <th>DOMINGO</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>08:00 - 12:00</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>12:00 - 13:00</th>
+                        <td colspan="7" rowspan="2" class="center">Almoçar</td>
+                    </tr>
+                    <tr>
+                        <th>13:00 - 15:00</th>
+                    </tr>
+                    <tr>
+                        <th>15:00 - 18:00</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>18:00 - 22:30</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>22:30 - 08:00</th>
+                        <td colspan="7" class="center">Dormir</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="8" class="center">
+                            <img src="./images/growdev.png" alt="" />
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </main>
+        <footer class="center">
+            <small>
+                Atividade prática - Tabela Cronograma de Estudos - ©Growdev
+                2022</small
+            >
+        </footer>
+    </body>
+</html>
