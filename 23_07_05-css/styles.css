@@ -1,0 +1,61 @@
+body {
+    font-size: 20px;
+}
+
+.pai {
+    background-color: #ccc;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pai-outra {
+    align-items: flex-end;
+}
+
+.pai > p {
+    color: #7b13e9;
+}
+
+.mais-outra {
+    color: red;
+}
+
+.pai2 p {
+    padding: 0;
+    margin: 0;
+    color: blue;
+}
+
+p,
+div > span {
+    text-decoration: underline;
+}
+
+.classe1,
+.classe2,
+.classe3 {
+    border: 3px solid black;
+    border-radius: 800px;
+}
+
+.lista > p:last-child {
+    color: darkorchid;
+}
+
+.lista > p:nth-child(2) {
+    color: green;
+}
+
+.lista > p:nth-last-child(1) {
+    color: green;
+}
+
+.lista > p:not(:last-child) {
+    color: red;
+}
+
+p:hover {
+    font-size: 40px;
+}
