@@ -34,6 +34,28 @@ O desenvolvimento desse sistema deve atender alguns requisitos:
 
 ## Exclusão de Tarefa:
 
-[ ] Crie uma função chamada **`deleteTask(index)`** que permita excluir uma tarefa da lista.
+[x] Crie uma função chamada **`deleteTask(index)`** que permita excluir uma tarefa da lista.
 
-[ ] Verifique se o índice fornecido é válido e, em seguida, remova a tarefa correspondente da lista.
+[x] Verifique se o índice fornecido é válido e, em seguida, remova a tarefa correspondente da lista.
+
+## Extra
+
+## Criar Usuário:
+
+[x] Crie uma função chamada **`createUser(username, password)`** que recebe o nome de usuário e senha por parâmetro e permite criar um novo usuário.
+
+[x] Verifique se o nome de usuário (username) e a senha (password) são fornecidos. Se não forem, exiba mensagens de erro apropriadas.
+
+[x]Crie um objeto de usuário contendo as propriedades: **`username`**, **`password`** e **`tasks`** (inicializado como um array vazio).
+
+## Login:
+
+[x] Crie uma função chamada **`login(username, password)`** que permita um usuário fazer login.
+
+[x] Verifique se o nome de usuário e a senha fornecidos correspondem a um usuário existente. Se corresponderem, retorne o objeto de usuário correspondente. Se não, retorne uma mensagem.
+
+## Associar Tarefas aos Usuários:
+
+[ ] Modifique a função **`createTask`** para receber também o objeto de usuário como argumento.
+
+[ ] Ao criar uma nova tarefa, adicione-a à lista de tarefas do usuário.

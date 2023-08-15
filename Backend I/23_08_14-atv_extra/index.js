@@ -1,102 +1,123 @@
-const tarefas = [];
+import {
+  createTask,
+  deleteTask,
+  listTasks,
+  updateTask,
+  updateTaskStatus,
+} from "./tasks.mjs";
 
-function validateIndex(index) {
-  return !index || isNaN(index) || index < 0 || index >= tarefas.length;
-}
+const users = [
+  {
+    username: "Diener",
+    password: "passwd",
+    tasks: [],
+  },
+];
 
-function createTask(title, description) {
-  if (title === "" || title === undefined) {
-    console.log("O título é obrigatório");
+// ------------------ User e Login ---------------
+
+function createUser(username, password) {
+  if (!username || !password) {
+    console.log("Gentileza informar o nome do usuário e/ou a Senha");
     return;
   }
-  tarefas.push({ title: title, description, completed: false });
+  users.push({ username, password, tasks: [] });
 }
 
-function listTasks() {
-  tarefas.forEach((tarefa, index) => {
-    console.log(
-      `${index} - Título: ${tarefa.title} - Descrição: ${
-        tarefa.description
-      } - Tarefa completada: ${tarefa.completed ? "Sim" : "Não"}`
-    );
-  });
-}
-
-function updateTaskStatus(index, completed) {
-  if (validateIndex(index)) {
-    console.log("Índice não encontrado!");
+function login(username, password) {
+  const usuario = users.find((user) => user.username === username);
+  if (!usuario) {
+    console.log("Usuário não encontrado!");
     return;
   }
-
-  tarefas[index].completed = completed;
-}
-
-function updateTask(index, newTitle, newDescription) {
-  if (validateIndex(index)) {
-    console.log("Índice não encontrado!");
+  if (usuario.password !== password) {
+    console.log("Senha errada.");
     return;
   }
-
-  if (!newTitle) {
-    console.log("O título é obrigatório");
-    return;
-  }
-
-  tarefas[index].title = newTitle;
-  tarefas[index].description = newDescription;
+  console.log(usuario);
+  return usuario;
 }
 
-function deleteTask(index) {
-  if (validateIndex(index)) {
-    console.log("Índice não encontrado!");
-    return;
-  }
+function managerTasks(user) {
+  do {
+    switch (
+      prompt(`Digite uma opção:
+  1 - Cadastrar tarefa
+  2 - Atualizar status tarefa
+  3 - Atualizar tarefa
+  4 - Listar tarefas
+  5 - Excluir tarefa
+  `)
+    ) {
+      case "1":
+        createTask(
+          prompt("Digite o título"),
+          prompt("Escreva a descrição"),
+          user
+        );
+        break;
 
-  tarefas.splice(index, 1);
+      case "2":
+        updateTaskStatus(
+          parseInt(prompt("Digite o índice da tarefa:")),
+          prompt(
+            "Se a tarefa foi concluída, digite sim, se não digite não."
+          ) === "sim"
+            ? true
+            : false,
+          user
+        );
+        break;
+
+      case "3":
+        updateTask(
+          parseInt(prompt("Digite o índice da tarefa:")),
+          prompt("Digite o título"),
+          prompt("Escreva a descrição"),
+          user
+        );
+        break;
+
+      case "4":
+        listTasks(user);
+        break;
+
+      case "5":
+        let tarefaDeletada = prompt(
+          "Qual o index da tarefa que deseja deletar?"
+        );
+        deleteTask(tarefaDeletada, user);
+      default:
+        break;
+    }
+  } while (confirm("Deseja continuar neste usuario?"));
 }
 
-// ---------------- Inicio do código --------------------
+function inicio() {
+  do {
+    switch (prompt("O que deseja fazer: 1 - Cadastro, 2 - Login")) {
+      case "1":
+        createUser(
+          prompt("Digite o nome do usuário"),
+          prompt("Digite a senha")
+        );
+        break;
 
-do {
-  switch (
-    prompt(`Digite uma opção:
-1 - Cadastrar tarefa
-2 - Atualizar status tarefa
-3 - Atualizar tarefa
-4 - Listar tarefas
-5 - Excluir tarefa
-`)
-  ) {
-    case "1":
-      createTask(prompt("Digite o título"), prompt("Escreva a descrição"));
-      break;
+      case "2":
+        const user = login(
+          prompt("Digite o nome do usuário"),
+          prompt("Digite a senha")
+        );
+        if (user) {
+          managerTasks(user);
+        }
+        break;
 
-    case "2":
-      updateTaskStatus(
-        parseInt(prompt("Digite o índice da tarefa:")),
-        prompt("Se a tarefa foi concluída, digite sim, se não digite não.") ===
-          "sim"
-          ? true
-          : false
-      );
-      break;
+      default:
+        break;
+    }
+  } while (confirm("Deseja continuar"));
+}
 
-    case "3":
-      updateTask(
-        parseInt(prompt("Digite o índice da tarefa:")),
-        prompt("Digite o título"),
-        prompt("Escreva a descrição")
-      );
-      break;
-
-    case "4":
-      listTasks();
-      break;
-
-    case "5":
-      let tarefaDeletada = prompt("Qual o index da tarefa que deseja deletar?");
-      deleteTask(tarefaDeletada);
-    default:
-      break;
-  }
-} while (confirm("Deseja continuar cadastrando?"));
+// inicio do programa
+inicio();
