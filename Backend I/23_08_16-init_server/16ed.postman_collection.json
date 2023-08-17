@@ -1,0 +1,176 @@
+{
+	"info": {
+		"_postman_id": "e7525e02-021e-4b91-9af4-10de3822451b",
+		"name": "16ed",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17147896"
+	},
+	"item": [
+		{
+			"name": "23_08_16",
+			"item": [
+				{
+					"name": "users",
+					"item": [
+						{
+							"name": "find",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "crianção",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Eduardo\",\n    \"password\": \"12345\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Eduardo\",\n    \"age\": 25\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/users/0",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users",
+										"0"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Eduardo\",\n    \"password\": \"12345\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"login"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "tasks",
+					"item": [
+						{
+							"name": "create",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"titulo\",\n    \"description\": \"teste 2\",\n    \"userId\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/tasks",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"tasks"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "root",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
