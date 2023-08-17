@@ -13,29 +13,62 @@ app.post("/users", (req, res) => {
   const { body } = req;
 
   if (!body.name) {
-    return res.status(500).json({
+    return res.status(400).json({
       success: false,
-      message: "erro desconhecido, problema do servidor",
+      message: "Usuário não foi informado",
     });
   }
 
-  if (!body.age) {
+  if (!body.password) {
     return res.status(400).json({
       success: false,
-      message: "campo age é obrigatório",
+      message: "Senha não foi informada",
+    });
+  }
+
+  const userRepeat = users.find((user) => user.name === body.name);
+  if (userRepeat) {
+    return res.status(400).json({
+      success: false,
+      message: "Usuário já existente!",
     });
   }
 
   const user = {
     id: users.length + 1,
     name: body.name,
-    age: body.age ? body.age : 0,
+    password: body.password,
+    tasks: [],
   };
   users.push(user);
 
   return res.status(201).json({
     success: true,
     message: "Usuário cadastrado com sucesso",
+    data: user,
+  });
+});
+
+app.post("/login", (req, res) => {
+  const { body } = req;
+  const user = users.find((user) => user.name === body.name);
+  if (!user) {
+    return res.status(404).json({
+      success: false,
+      message: "Usuário não localizado!",
+    });
+  }
+
+  if (user.password !== body.password) {
+    return res.status(400).json({
+      success: false,
+      message: "Senha incorreta!",
+    });
+  }
+
+  return res.status(200).json({
+    success: true,
+    message: `Usuário encontrado!`,
     data: user,
   });
 });
@@ -60,8 +93,38 @@ app.put("/users/:id", (req, res) => {
 
   return res.status(200).json({
     success: true,
-    message: "Usuario atualizado com sucesso",
+    message: "Usuário atualizado com sucesso",
     data: users[userIndex],
+  });
+});
+
+// tasks
+
+app.post("/tasks", (req, res) => {
+  // const body = req.body
+  // const title = req.body.title
+  const { title, description, userId } = req.body; // desestruturação
+
+  if (!title || !description) {
+    return res.status(400).json({
+      success: false,
+      message: "Por favor preencha o título e a descrição!",
+    });
+  }
+
+  const user = users.find((user) => user.id === userId);
+  const task = {
+    id: user.tasks.length,
+    title: title,
+    description: description,
+    completed: false,
+  };
+  user.tasks.push(task);
+
+  return res.status(200).json({
+    success: true,
+    message: "Task cadastrada com sucesso!",
+    data: task,
   });
 });
 
