@@ -12,5 +12,5 @@
   "prettier.bracketSpacing": true,
   "prettier.insertPragma": false,
   "prettier.trailingComma": "es5",
-  "window.zoomLevel": -1,
+  "window.zoomLevel": 0,
 }
