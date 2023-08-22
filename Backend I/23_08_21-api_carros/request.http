@@ -1,0 +1,38 @@
+@url=http://localhost:8080
+
+GET {{url}} HTTP/1.1
+
+
+### limitador entre as requisições
+GET {{url}}/clients HTTP/1.1
+
+
+###
+POST {{url}}/clients HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Gilberto",
+  "address": "Rua 1, 12",
+  "cpf": "111.111.111-11",
+  "phone": "11-1111-1111"
+}
+
+###
+GET {{url}}/cars HTTP/1.1
+
+###
+POST {{url}}/cars/11111111111 HTTP/1.1
+Content-Type: application/json
+
+{
+  "brand":"Fiat",
+  "year": "1998",
+  "color":"Branco",
+  "model":"Uno",
+  "plate":"GOL-3434",
+  "defects":["vela", "motor", "suspensão", "velôcimetro"]
+}
+
+###
+GET {{url}}/clients/1 HTTP/1.1

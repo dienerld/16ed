@@ -10,8 +10,7 @@
   },
   "prettier.arrowParens": "always",
   "prettier.bracketSpacing": true,
-  "prettier.endOfLine": "lf",
   "prettier.insertPragma": false,
   "prettier.trailingComma": "es5",
-  "window.zoomLevel": -0.5
+  "window.zoomLevel": 0,
 }
