@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Intro front II</title>
+  </head>
+  <body style="width: 100vw; height: 100vh">
+    <h1>Intro front II</h1>
+
+    <input type="number" id="idInput" />
+
+    <button onclick="handleClick()">Enviar</button>
+    <p id="p" style="font-size: 3rem">paragrafo</p>
+
+    <div id="container" style="display: flex;">
+
+    </div>
+
+    <p id="positionMouse">Mouse</p>
+    <script>
+      // const input = document.getElementById('idInput')
+      const input = document.querySelector("#idInput");
+      const [body] = document.getElementsByTagName("body");
+      const p = document.getElementById("p");
+      const pMouse = document.getElementById("positionMouse");
+      body.addEventListener("mouseover", (e) => {
+        pMouse.innerText = `Position X = ${e.screenX} | Y = ${e.screenY}`;
+      });
+      const container = document.getElementById("container");
+      function handleClick() {
+        // console.log("Cliquei no botão");
+        // console.log(input.value);
+        // p.style.color = "red";
+
+        container.innerHTML = `
+          <h1 style="margin-left: 8px; border: 1px solid #332211">Diener</h1>
+        `
+      }
+
+    </script>
+  </body>
+</html>
