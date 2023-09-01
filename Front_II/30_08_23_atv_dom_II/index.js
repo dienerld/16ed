@@ -1,16 +1,19 @@
-function editarCard() {
-  alert("Clicou em editar");
+function editarCard(index) {
+  const textoDesejado = prompt("Digite o novo título");
+  arrTitleCard[index].textContent = textoDesejado;
 }
 
-function apagarCard() {
+function apagarCard(index) {
   if (confirm("Tem certeza da exclusão do card?")) {
-    alert("Confirmado!");
+    arrCards[index].remove();
   } else {
     alert("Cancelou!");
   }
 }
-
-const arrCards = document.querySelectorAll(".card");
+const container = document.querySelector("#container");
+const arrCards = document.querySelectorAll(
+  ".card"
+);
 
 // arrCards.forEach((card) => {
 //   card.style.backgroundColor = "#e07137";
@@ -20,20 +23,24 @@ for (const card of arrCards) {
   card.style.backgroundColor = "#e07137";
 }
 
-const arrTitleCard = document.querySelectorAll(".titulo-card");
+const arrTitleCard = document.querySelectorAll(
+  ".titulo-card"
+) ;
 arrTitleCard.forEach((tituloCard) => {
   tituloCard.innerText = "Meu Card";
+  tituloCard.style.marginTop = "20px";
   tituloCard.style.color = "#2b385b";
 });
 
 const arrCardDescription = document.querySelectorAll(".descricao-card");
 for (const description of arrCardDescription) {
+  description.style.marginTop = "20px";
   description.innerText = "Descrição modificada pelo JavaScript";
   description.style.color = "white";
 }
 
 const arrBtnEdit = document.querySelectorAll(".botao-editar");
-arrBtnEdit.forEach((button) => {
+arrBtnEdit.forEach((button, index) => {
   button.style.backgroundColor = "#338106";
   button.style.padding = "6px";
   button.style.border = "none";
@@ -41,11 +48,11 @@ arrBtnEdit.forEach((button) => {
   button.style.color = "white";
   button.style.marginTop = "30px";
 
-  button.setAttribute("onClick", "editarCard()");
+  button.setAttribute("onClick", `editarCard(${index})`);
 });
 
 const arrBtnDelete = document.querySelectorAll(".botao-apagar");
-arrBtnDelete.forEach((button) => {
+arrBtnDelete.forEach((button, index) => {
   button.setAttribute(
     "style",
     `
@@ -56,5 +63,5 @@ arrBtnDelete.forEach((button) => {
         margin-top: 30px;
         `
   );
-  button.setAttribute("onClick", "apagarCard()");
+  button.setAttribute("onClick", `apagarCard(${index})`);
 });

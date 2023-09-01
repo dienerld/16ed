@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="div"></div>
+    <input type="text" id="input" />
+
+    <button onclick="run()">enviar</button>
+    <script>
+      const inputEl = document.getElementById("input");
+      const div = document.getElementById("div");
+
+      function run() {
+        console.log(inputEl.value);
+        div.innerHTML = inputEl.value;
+      }
+    </script>
+  </body>
+</html>
