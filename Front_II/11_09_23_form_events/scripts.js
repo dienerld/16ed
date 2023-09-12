@@ -1,6 +1,17 @@
 const form = document.getElementById("form");
 const submit = document.getElementById("submit");
 
+const KEY_STORAGE = "16ed-23-09-11";
+
+function saveData(data) {
+  const storageStr = localStorage.getItem(KEY_STORAGE) || "[]";
+  const storage = JSON.parse(storageStr);
+
+  storage.push(data);
+
+  localStorage.setItem(KEY_STORAGE, JSON.stringify(storage));
+}
+
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   const name = form.name.value;
@@ -17,6 +28,11 @@ form.addEventListener("submit", (event) => {
 
   const arrBoxes = [];
 
+  if (checkBoxes.length == 0) {
+    alert("precisa marcar um checkbox");
+    return;
+  }
+
   checkBoxes.forEach((checkBox) => {
     arrBoxes.push(checkBox.value);
   });
@@ -26,18 +42,14 @@ form.addEventListener("submit", (event) => {
     address,
     city,
     state,
+    dataProf: {
+      nature,
+      area: arrBoxes,
+      mini,
+    },
   };
 
-  const dataProf = {
-    nature,
-    area: arrBoxes,
-    mini,
-  };
-
-  console.log({
-    person,
-    dataProf,
-  });
+  saveData(person);
 });
 
 function test(...args) {
