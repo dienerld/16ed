@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulário elaborado</title>
+  </head>
+  <body>
+    <h1>Formulário</h1>
+    <form id="form">
+      <fieldset>
+        <legend>Dados pessoais</legend>
+        <label for="name">Nome:</label>
+        <input id="name" name="name" type="text" /><br />
+        <label for="address">Endereço:</label>
+        <input id="address" type="text" /><br />
+        <label for="city">Cidade:</label>
+        <input id="city" type="text" /><br />
+        <label for="state">Estado:</label>
+        <select id="state">
+          <option value="SP">São Paulo</option>
+          <option value="RS">Rio Grande do Sul</option>
+          <option value="BH">Bahia</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>Dados profissionais</legend>
+        <section>
+          <span>Natureza do Cargo<br /></span>
+          <input
+            type="radio"
+            name="jobNature"
+            id="input-job-1"
+            value="Gerencia"
+          />
+          <label for="input-job-1">Gerência</label>
+          <input
+            type="radio"
+            name="jobNature"
+            id="input-job-2"
+            value="Financeiro"
+          />
+          <label for="input-job-2">Financeiro</label>
+          <input
+            type="radio"
+            name="jobNature"
+            id="input-job-3"
+            value="Recepcao"
+          />
+          <label for="input-job-3">Recepcao</label>
+          <input
+            type="radio"
+            name="jobNature"
+            id="input-job-4"
+            value="Administrativo"
+          />
+          <label for="input-job-4">Administrativo</label>
+          <input
+            type="radio"
+            name="jobNature"
+            id="input-job-5"
+            value="Juridico"
+          />
+          <label for="input-job-5">Juridico</label>
+        </section>
+
+        <br />
+        <section id="infosBox">
+          <span>Área de interesse<br /></span>
+          <input type="checkbox" id="input-area-1" value="computing" />
+          <label for="input-area-1">Computação</label>
+          <input type="checkbox" id="input-area-2" value="biology" />
+          <label for="input-area-2">Biologia</label>
+          <input type="checkbox" id="input-area-3" value="nature" />
+          <label for="input-area-3">Meio Ambiente</label>
+          <input type="checkbox" id="input-area-4" value="engineer" />
+          <label for="input-area-4">Engenharia</label>
+          <input type="checkbox" id="input-area-5" value="history" />
+          <label for="input-area-5">História</label><br />
+        </section>
+        <br />
+        <section>
+          <label for="miniCurriculo">Mini-currículo:</label>
+          <textarea
+            name="miniCurriculo"
+            id="miniCurriculo"
+            cols="50"
+            rows="5"
+          ></textarea>
+        </section>
+      </fieldset>
+      <section>
+        <input type="submit" id="submit" value="Enviar" />
+        <input type="reset" value="Limpar" />
+      </section>
+    </form>
+    <script src="./scripts.js"></script>
+  </body>
+</html>
