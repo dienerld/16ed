@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Revisão Formulários</title>
+
+    <style>
+      .flex {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .error {
+        color: red;
+        background-color: aqua;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <form action="" class="flex" id="form-rev">
+        <div>
+          <label for="name">Nome</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Digite seu nome"
+          />
+        </div>
+        <div>
+          <label for="value">Valor</label>
+          <input type="number" id="value" step=".2" name="value" />
+        </div>
+        <div>
+          <label for="radio1">1</label>
+          <input
+            type="radio"
+            name="radio"
+            value="valor 1"
+            id="radio1"
+            checked
+          />
+        </div>
+        <div>
+          <label for="radio2">2</label>
+          <input type="radio" name="radio" value="valor 22" id="radio2" />
+        </div>
+
+        <div>
+          <label for="checkbox1">RG</label>
+          <input type="checkbox" name="checkbox1" value="RG" id="checkbox1" />
+        </div>
+        <div>
+          <label for="checkbox2">CPF</label>
+          <input type="checkbox" name="checkbox" value="CPF" id="checkbox2" />
+        </div>
+        <div>
+          <label for="checkbox3">CNH</label>
+          <input type="checkbox" name="checkbox" value="CNH" id="checkbox3" />
+        </div>
+
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+      </form>
+    </main>
+
+    <script src="./scripts.js"></script>
+  </body>
+</html>
