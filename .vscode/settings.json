@@ -13,7 +13,7 @@
   "prettier.endOfLine": "lf",
   "prettier.insertPragma": false,
   "prettier.trailingComma": "es5",
-  "window.zoomLevel": 0,
+  "window.zoomLevel": -1,
   "editor.fontSize": 24,
   "editor.lineHeight": 0
 }
