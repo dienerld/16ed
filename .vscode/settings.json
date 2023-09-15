@@ -14,5 +14,6 @@
   "prettier.insertPragma": false,
   "prettier.trailingComma": "es5",
   "window.zoomLevel": 0,
-  "editor.fontSize": 24
+  "editor.fontSize": 24,
+  "editor.lineHeight": 0
 }
