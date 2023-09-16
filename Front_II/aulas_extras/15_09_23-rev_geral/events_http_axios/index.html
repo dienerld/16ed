@@ -9,7 +9,6 @@
       src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"
     ></script>
     <script defer src="./scripts.js"></script>
-    <script defer src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
     <main>
@@ -36,8 +35,12 @@
 
       <div id="pagination">
         <p class="">paginação</p>
-        <button onclick="requestApiPerPage('previous')">Voltar</button>
-        <button onclick="requestApiPerPage('next')">Avançar</button>
+        <button id="btn-prev" onclick="requestApiPerPage('previous')">
+          Voltar
+        </button>
+        <button id="btn-next" onclick="requestApiPerPage('next')">
+          Avançar
+        </button>
       </div>
 
       <div id="container-list"></div>

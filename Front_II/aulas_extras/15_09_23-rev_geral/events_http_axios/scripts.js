@@ -41,8 +41,12 @@ async function submitRequestApi(e) {
 }
 
 async function requestApiPerPage(option) {
+  const btnPrevEl = document.getElementById("btn-prev");
+  const btnNextEl = document.getElementById("btn-next");
   // exp booleana ? caso dê verdade : caso dê falso
   option === "next" ? currentPage++ : currentPage--;
+  btnNextEl.setAttribute("disabled", true);
+  btnPrevEl.setAttribute("disabled", true);
   const { data } = await api.get("/character?page=" + currentPage);
 
   containerListEl.innerHTML = "";
@@ -51,5 +55,7 @@ async function requestApiPerPage(option) {
     pEl.innerHTML = element.name;
     containerListEl.appendChild(pEl);
   });
+  btnNextEl.removeAttribute("disabled");
+  btnPrevEl.removeAttribute("disabled");
 }
 requestApiPerPage();
