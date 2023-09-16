@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events</title>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"
+    ></script>
+    <script defer src="./scripts.js"></script>
+    <script defer src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <main>
+      <h1>Eventos</h1>
+
+      <form id="request-api">
+        <div id="param-api">
+          <label for="character-id">Id do personagem</label>
+          <input type="text" id="character-id" />
+        </div>
+        <div id="query-api">
+          <label for="character-name">Nome do personagem</label>
+          <input type="text" id="character-name" class="border" />
+          <br />
+          <label for="character-status">Status de vida</label>
+          <input type="text" id="character-status" />
+          <br />
+          <label for="page">Pagina</label>
+          <input type="number" id="page" />
+        </div>
+
+        <button type="submit" class="bg-white dark:bg-slate-800">Buscar</button>
+      </form>
+
+      <div id="pagination">
+        <p class="">paginação</p>
+        <button onclick="requestApiPerPage('previous')">Voltar</button>
+        <button onclick="requestApiPerPage('next')">Avançar</button>
+      </div>
+
+      <div id="container-list"></div>
+    </main>
+  </body>
+</html>

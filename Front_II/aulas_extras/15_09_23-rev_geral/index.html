@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="nav-bar">
+        <p class="brand">Revisão</p>
+      </div>
+      <div class="box-wrapper">
+        <div class="box">
+          <h2>Contact Us</h2>
+          <form id="form" action="">
+            <div>
+              <input
+                type="text"
+                name="username"
+                id="name"
+                required
+                placeholder=" "
+              />
+              <label>Name: </label>
+            </div>
+            <div>
+              <input
+                type="email"
+                name=""
+                required
+                placeholder=" "
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+              />
+              <label>Email </label>
+            </div>
+            <div>
+              <input type="text" name="" required placeholder=" " />
+              <label>Subject</label>
+            </div>
+            <div>
+              <textarea required placeholder=" "></textarea>
+              <label>Message</label>
+            </div>
+            <input id="submit" type="submit" value="Submit" />
+          </form>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <p class="copyright">© 2018</p>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
