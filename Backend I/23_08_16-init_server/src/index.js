@@ -5,7 +5,14 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-const users = [];
+const users = [
+  {
+    id: 1,
+    name: "João",
+    password: "123",
+    tasks: [],
+  },
+];
 
 app.get("/users", (req, res) => {
   return res.json({ users });
@@ -129,6 +136,24 @@ app.post("/tasks", (req, res) => {
     data: task,
   });
 });
+
+app.get("/tasks/:userId", (req, res) => {
+  const { userId } = req.params;
+  const page = req.query.page || 1;
+  const per_page = req.query.per_page ?? 5;
+
+  const user = users.find((user) => user.id === Number(userId));
+  const tasks = user.tasks.slice((page - 1) * per_page, page * per_page);
+
+  return res.json({
+    info: {
+      total: user.tasks.length,
+    },
+    data: tasks,
+  });
+});
+
+// ------start server
 
 app.listen(8080, () => {
   console.log("server running in http://localhost:8080/");
