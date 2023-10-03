@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ccc;
+}
+
+h2 {
+  margin-top: 16px;
+}
+
+.example {
+  width: 100%;
+  height: 200px;
+  background-color: #fff;
+}
+
+.example .item {
+  height: 50px;
+  width: 50px;
+  background: purple;
+  animation-name: c;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+h1,
+h2 {
+  color: red;
+}
+
+@keyframes c {
+  0% {
+    opacity: 0;
+    background-color: orangered;
+  }
+  50% {
+    background-color: cyan;
+  }
+  100% {
+    opacity: 1;
+    transform: translate(200px, 150px);
+  }
+}
