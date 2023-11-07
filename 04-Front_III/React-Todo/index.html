@@ -1,22 +1,44 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ToDo</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDo</title>
 
-  <link rel="stylesheet" href="./styles.css">
-</head>
-<body>
-  <header>
-    <img src="https://react-todo.dienerld.dev/src/assets/rocket.svg" alt="Icone foguete.">
-    <p>to<span>do</span></p>
-  </header>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header>
+      <img
+        src="https://react-todo.dienerld.dev/src/assets/rocket.svg"
+        alt="Icone foguete."
+      />
+      <p>to<span>do</span></p>
+    </header>
 
-  <main>
+    <main>
+      <div id="newTask">
+        <input type="text" placeholder="Adicione uma nova Tarefa" />
+        <button type="button">
+          Criar
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#fff"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-plus-circle"
+          >
+            <circle cx="12" cy="12" r="10" />
+            <path d="M8 12h8" />
+            <path d="M12 8v8" />
+          </svg>
+        </button>
+      </div>
+    </main>
 
-  </main>
-
-  <script src="./main.js"></script>
-</body>
+    <script src="./main.js"></script>
+  </body>
 </html>
