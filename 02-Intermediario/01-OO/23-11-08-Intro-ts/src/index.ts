@@ -44,4 +44,4 @@ function calcularMedia(numero1: number, numero2: number): Retorno {
   return { media };
 }
 
-console.log(calcularMedia(0, 8));
+console.log(calcularMedia(3, 8));
