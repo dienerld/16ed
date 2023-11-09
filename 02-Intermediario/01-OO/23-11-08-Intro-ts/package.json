@@ -5,7 +5,7 @@
   "main": "src/index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "tsnd --respawn --transpile-only ./src/index.ts",
+    "dev": "tsnd --respawn --cls --transpile-only ./src/index.ts",
     "build": "tsc"
   },
   "keywords": [],
