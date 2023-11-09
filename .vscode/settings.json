@@ -8,12 +8,13 @@
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
+  "terminal.integrated.fontSize": 20,
   "prettier.arrowParens": "always",
   "prettier.bracketSpacing": true,
   "prettier.endOfLine": "lf",
   "prettier.insertPragma": false,
   "prettier.trailingComma": "es5",
-  "window.zoomLevel": -2,
+  "window.zoomLevel": -1,
   "editor.fontSize": 26,
   "editor.lineHeight": 0
 }
