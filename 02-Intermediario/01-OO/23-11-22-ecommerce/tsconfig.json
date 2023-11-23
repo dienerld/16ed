@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "ES2022", // versão do javascript que você quer transpilar
+    "rootDir": "./src", // pasta de origem
+    "outDir": "./build", // pasta de destino
+    "moduleResolution": "node"
+  },
+  "include": [
+    "src/**/*.ts" // todos os arquivos dentro da pasta src
+  ],
+  "exclude": [
+    "./node_modules" // exclui a pasta node_modules
+  ]
+}

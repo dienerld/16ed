@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "ES2022", // Define para qual versão do ECMAScript (ES) o TypeScript compilará seu código.
+    "module": "commonjs", // Especifica o sistema de módulos a ser utilizado (CommonJS é amplamente utilizado no ambiente Node.js.).
+    "rootDir": "./src", // Define o diretório raiz onde o TypeScript procura por arquivos; Todos os caminhos dos arquivos TypeScript especificados em "include" serão relativos a este diretório.
+    "outDir": "./dist", // Indica o diretório de saída para os arquivos JavaScript transpilados.
+    "esModuleInterop": true, // Permite interoperabilidade fácil entre os sistemas de módulos ES6 e CommonJS; Isso é útil ao importar módulos que usam a convenção de exportação padrão ES6 em um ambiente CommonJS.
+    "forceConsistentCasingInFileNames": true, // Ajuda a evitar problemas de arquivos em sistemas de arquivos que diferenciam maiúsculas de minúsculas. Garante consistência na forma como os nomes de arquivos são tratados.
+    "skipLibCheck": true, // Evita a verificação de bibliotecas de definições de tipo arquivos .d.ts
+  },
+  "include": [
+    "src/**/*.ts"
+  ], // Lista de padrões de inclusão que especificam quais arquivos TypeScript devem ser incluídos na compilação (todos os arquivos .ts dentro do diretório "src" e suas subpastas serão incluídos).
+  "exclude": [
+    "./node_modules"
+  ] // Lista de padrões de exclusão que especificam quais arquivos ou diretórios não devem ser incluídos na compilação/
+}
