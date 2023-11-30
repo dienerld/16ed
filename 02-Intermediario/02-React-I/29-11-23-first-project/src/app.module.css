@@ -1,0 +1,16 @@
+.containerHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  background-color: var(--gray-700);
+
+  & img {
+    margin-right: 8px;
+  }
+}
+
+.containerMain {
+  max-width: 1024px;
+  margin: 0 auto;
+}
