@@ -4,6 +4,7 @@ import { CreateToDo } from "./components/CreateTodo";
 import styles from "./app.module.css";
 import { Typograph } from "./components/Text";
 import styled from "styled-components";
+import { Todo } from "./components/Todo";
 
 export function App() {
   return (
@@ -28,6 +29,10 @@ export function App() {
             Tarefas concluídas
           </Typograph>
         </WrapperLabelTasks>
+        
+
+        <Todo />
+
       </main>
     </>
   );
