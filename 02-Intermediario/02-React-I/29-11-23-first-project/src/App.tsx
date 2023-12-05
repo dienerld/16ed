@@ -1,7 +1,9 @@
 import { Title } from "./components/Title";
-import { Card } from "./components/Card";
+// import { Card } from "./components/Card";
 import { CreateToDo } from "./components/CreateTodo";
 import styles from "./app.module.css";
+import { Typograph } from "./components/Text";
+import styled from "styled-components";
 
 export function App() {
   return (
@@ -18,7 +20,21 @@ export function App() {
 
       <main className={styles.containerMain}>
         <CreateToDo />
+        <WrapperLabelTasks>
+          <Typograph spanContent="2" color="secondary">
+            Minhas tarefas
+          </Typograph>
+          <Typograph spanContent="0 de 2">
+            Tarefas concluídas
+          </Typograph>
+        </WrapperLabelTasks>
       </main>
     </>
   );
 }
+
+const WrapperLabelTasks = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 0;
+`
