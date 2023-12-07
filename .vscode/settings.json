@@ -6,10 +6,10 @@
     "editor.maxTokenizationLineLength": 2500
   },
   "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
   },
   "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
   },
   "terminal.integrated.fontSize": 20,
   "prettier.arrowParens": "always",
