@@ -1,5 +1,5 @@
 {
   "devDependencies": {
-    "eslint-config-dienerld": "^1.0.6"
+    "eslint": "^8.56.0"
   }
 }
