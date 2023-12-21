@@ -1,11 +1,14 @@
 import { Book } from '../../types'
+import { ItemBook } from '../Item-book'
+import { Wrapper } from './styles'
 
 interface ListBookProps {
   books: Book[]
   onDelete: (id: number) => void
+  onUpdate: (book: Book) => void
 }
 
-export function ListBooks({ books, onDelete }: ListBookProps) {
+export function ListBooks({ books, onDelete, onUpdate }: ListBookProps) {
   function handleDelete(id: number) {
     if (confirm('Deseja realmente excluir?')) {
       onDelete(id)
@@ -13,19 +16,15 @@ export function ListBooks({ books, onDelete }: ListBookProps) {
   }
 
   return (
-    <div>
+    <Wrapper>
       {books.map((book) => (
-        <div
+        <ItemBook
           key={book.id}
-          style={{
-            padding: '16px',
-            display: 'flex',
-          }}
-        >
-          <h1>{book.title}</h1>
-          <button onClick={() => handleDelete(book.id)}>Delete</button>
-        </div>
+          book={book}
+          handleUpdate={onUpdate}
+          handleDelete={handleDelete}
+        />
       ))}
-    </div>
+    </Wrapper>
   )
 }

@@ -27,6 +27,10 @@ export function Home() {
 
     if (book.id !== 0) {
       // atualizar
+      const newBooks = [...books]
+      const bookIdx = books.findIndex((b) => b.id === book.id)
+      newBooks[bookIdx] = book
+      setBooks(newBooks)
     } else {
       // criar novo
       setBooks((prevState) => [
@@ -41,6 +45,10 @@ export function Home() {
 
     setBook(emptyBook)
   }
+
+  // function handleUpdate(book: Book) {
+  //   setBook(book)
+  // }
 
   function handleDelete(id: number) {
     const filteredBooks = books.filter((b) => b.id != id)
@@ -86,13 +94,15 @@ export function Home() {
           value={book.description}
         />
 
-        <S.Button type="submit">Cadastrar</S.Button>
+        <S.Button type="submit">
+          {book.id === 0 ? 'Cadastrar' : 'Atualizar'}
+        </S.Button>
       </S.Form>
 
       <hr />
 
       <div>
-        <ListBooks books={books} onDelete={handleDelete} />
+        <ListBooks books={books} onUpdate={setBook} onDelete={handleDelete} />
       </div>
     </S.Wrapper>
   )
