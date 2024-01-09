@@ -3,10 +3,10 @@ import styled from 'styled-components'
 
 export function Layout() {
   return (
-    <div>
+    <Wrapper>
       <Header>Header</Header>
       <Outlet />
-    </div>
+    </Wrapper>
   )
 }
 
@@ -14,4 +14,9 @@ const Header = styled.header`
   background: ${(props) => props.theme.colors.primary};
   height: 60px;
   width: 100%;
+`
+
+const Wrapper = styled.div`
+  width: 100%;
+  height: 100vh;
 `
