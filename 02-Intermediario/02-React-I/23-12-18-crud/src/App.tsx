@@ -1,8 +1,11 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
 
-import { GlobalStyles, themes } from './styles'
+import { GlobalStyles } from './styles'
 import { Home, About, Layout } from './pages'
+import { useTheme } from './contexts/ThemeContext'
+import { ShowBooks } from './pages/show-books'
+import { BooksProvider } from './contexts/BooksContext'
 
 const routes = createBrowserRouter([
   {
@@ -10,12 +13,16 @@ const routes = createBrowserRouter([
     element: <Layout />,
     children: [
       {
-        path: 'a',
+        path: '/',
         element: <Home />,
       },
       {
-        path: '/about',
+        path: 'about',
         element: <About />,
+      },
+      {
+        path: 'books',
+        element: <ShowBooks />,
       },
     ],
     errorElement: <div>Erro</div>,
@@ -23,10 +30,14 @@ const routes = createBrowserRouter([
 ])
 
 function App() {
+  const themeContext = useTheme()
+
   return (
-    <ThemeProvider theme={themes.dark}>
-      <GlobalStyles />
-      <RouterProvider router={routes} />
+    <ThemeProvider theme={themeContext.theme}>
+      <BooksProvider>
+        <RouterProvider router={routes} />
+        <GlobalStyles />
+      </BooksProvider>
     </ThemeProvider>
   )
 }

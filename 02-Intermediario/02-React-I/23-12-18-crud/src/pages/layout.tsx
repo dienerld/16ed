@@ -1,10 +1,19 @@
-import { Outlet } from 'react-router-dom'
+import { NavLink, Outlet } from 'react-router-dom'
 import styled from 'styled-components'
 
+import { useTheme } from '../contexts/ThemeContext'
+
 export function Layout() {
+  // const themeContext = useContext(ThemeContext)
+  const themeContext = useTheme()
+
   return (
     <Wrapper>
-      <Header>Header</Header>
+      <Header>
+        <NavLink to="/books">Listagem</NavLink>
+        <NavLink to="/">Cadastro</NavLink>
+        <button onClick={themeContext.toggle}>Mudar tema</button>
+      </Header>
       <Outlet />
     </Wrapper>
   )

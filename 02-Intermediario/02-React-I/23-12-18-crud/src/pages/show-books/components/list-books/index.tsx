@@ -1,4 +1,4 @@
-import { Book } from '../../types'
+import { Book } from '../../../home/types'
 import { ItemBook } from '../Item-book'
 import { Wrapper } from './styles'
 

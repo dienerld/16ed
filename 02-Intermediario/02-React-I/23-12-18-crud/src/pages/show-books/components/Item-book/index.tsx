@@ -1,4 +1,4 @@
-import { Book } from '../../types'
+import { Book } from '../../../home/types'
 import { Wrapper } from './styles'
 
 interface ItemBookProps {

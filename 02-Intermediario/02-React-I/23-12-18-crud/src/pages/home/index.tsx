@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import * as S from './styles'
 import { Book } from './types'
-import { ListBooks } from './components/list-books'
+import { useBooks } from '../../contexts/BooksContext'
 
 const emptyBook: Book = {
   id: 0,
@@ -15,7 +15,8 @@ const emptyBook: Book = {
 
 export function Home() {
   const [book, setBook] = useState<Book>(emptyBook)
-  const [books, setBooks] = useState<Book[]>([])
+
+  const { addBook } = useBooks()
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
     const { name, value } = e.target
@@ -27,32 +28,20 @@ export function Home() {
 
     if (book.id !== 0) {
       // atualizar
-      const newBooks = [...books]
-      const bookIdx = books.findIndex((b) => b.id === book.id)
-      newBooks[bookIdx] = book
-      setBooks(newBooks)
+      // const newBooks = [...books]
+      // const bookIdx = books.findIndex((b) => b.id === book.id)
+      // newBooks[bookIdx] = book
+      // setBooks(newBooks)
     } else {
       // criar novo
-      setBooks((prevState) => [
-        ...prevState,
-        {
-          ...book,
-          registerDate: new Date().toISOString().split('T')[0],
-          id: Date.now(),
-        },
-      ])
+      addBook({
+        ...book,
+        registerDate: new Date().toISOString().split('T')[0],
+        id: Date.now(),
+      })
     }
 
     setBook(emptyBook)
-  }
-
-  // function handleUpdate(book: Book) {
-  //   setBook(book)
-  // }
-
-  function handleDelete(id: number) {
-    const filteredBooks = books.filter((b) => b.id != id)
-    setBooks(filteredBooks)
   }
 
   return (
@@ -98,12 +87,6 @@ export function Home() {
           {book.id === 0 ? 'Cadastrar' : 'Atualizar'}
         </S.Button>
       </S.Form>
-
-      <hr />
-
-      <div>
-        <ListBooks books={books} onUpdate={setBook} onDelete={handleDelete} />
-      </div>
     </S.Wrapper>
   )
 }
