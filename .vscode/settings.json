@@ -6,7 +6,7 @@
     "editor.maxTokenizationLineLength": 2500
   },
   "[typescript]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "editor.defaultFormatter": "vscode.typescript-language-features",
   },
   "[typescriptreact]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint",
@@ -19,5 +19,17 @@
   "prettier.trailingComma": "es5",
   "window.zoomLevel": -1,
   "editor.fontSize": 26,
-  "editor.lineHeight": 0
+  "editor.lineHeight": 0,
+  "sqltools.connections": [
+    {
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 5432,
+      "askForPassword": true,
+      "driver": "PostgreSQL",
+      "name": "PG16ed",
+      "database": "postgres",
+      "username": "postgres"
+    }
+  ]
 }

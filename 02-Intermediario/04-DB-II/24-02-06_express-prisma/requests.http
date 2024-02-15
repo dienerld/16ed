@@ -1,0 +1,27 @@
+# Variavel
+@URL=http://localhost:3333
+
+# --- Requests
+
+GET {{URL}} HTTP/1.1
+
+
+###
+
+POST {{URL}} HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Jean",
+  "email": "jean@mail.com"
+}
+
+
+###
+POST {{URL}}/1/posts HTTP/1.1
+Content-Type: application/json
+
+{
+  "title": "Porque usar Prisma",
+  "content": "....."
+}
