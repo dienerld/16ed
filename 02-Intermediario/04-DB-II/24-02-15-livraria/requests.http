@@ -1,0 +1,41 @@
+# Variavel
+@URL=http://localhost:3333
+
+# --- Requests
+
+GET {{URL}} HTTP/1.1
+
+
+###
+GET {{URL}}/authors HTTP/1.1
+Content-Type: application/json
+
+
+###
+
+POST {{URL}}/authors HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Diener"
+}
+
+
+#### Books
+
+GET {{URL}}/books HTTP/1.1
+Content-Type: application/json
+
+
+###
+
+POST {{URL}}/books HTTP/1.1
+Content-Type: application/json
+
+{
+  "authorId": "83df6cd8-1586-4c83-9b8f-a6147caa53c2",
+  "title": "O livro do Joaquim",
+  "description": "O livro do Joaquim",
+  "genre": "Terror",
+  "publishYear": "2020-01-01"
+}

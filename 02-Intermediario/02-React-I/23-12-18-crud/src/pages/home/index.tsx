@@ -2,13 +2,14 @@ import React, { useState } from 'react'
 import * as S from './styles'
 import { Book } from './types'
 import { useBooks } from '../../contexts/BooksContext'
+import { httpClient } from '../../api/client'
 
 const emptyBook: Book = {
   id: 0,
   title: '',
-  author: '',
+  authorId: '',
   description: '',
-  gender: '',
+  genre: '',
   publishYear: '',
   registerDate: '',
 }
@@ -23,7 +24,7 @@ export function Home() {
     setBook((prevState) => ({ ...prevState, [name]: value }))
   }
 
-  function saveBook(e: React.FormEvent<HTMLFormElement>) {
+  async function saveBook(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
 
     if (book.id !== 0) {
@@ -33,12 +34,22 @@ export function Home() {
       // newBooks[bookIdx] = book
       // setBooks(newBooks)
     } else {
-      // criar novo
-      addBook({
-        ...book,
-        registerDate: new Date().toISOString().split('T')[0],
-        id: Date.now(),
-      })
+      // // criar novo
+      // addBook({
+      //   ...book,
+      //   registerDate: new Date().toISOString().split('T')[0],
+      //   id: Date.now(),
+      // })
+      // /------------------------------
+      // fazer req api
+      try {
+        await httpClient<Book>('/books', {
+          body: JSON.stringify(book),
+          method: 'POST',
+        })
+      } catch (err) {
+        console.log(err)
+      }
     }
 
     setBook(emptyBook)
@@ -56,8 +67,8 @@ export function Home() {
         <S.Input
           placeholder="Autor"
           onChange={handleChange}
-          name="author"
-          value={book.author}
+          name="authorId"
+          value={book.authorId}
         />
         <label>
           Ano de publicação
@@ -73,8 +84,8 @@ export function Home() {
         <S.Input
           placeholder="Gênero"
           onChange={handleChange}
-          name="gender"
-          value={book.gender}
+          name="genre"
+          value={book.genre}
         />
         <S.Input
           placeholder="Breve descrição"
