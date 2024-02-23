@@ -27,6 +27,7 @@ bookRoutes.get("/", async (req, res) => {
   return res.json({
     message: "Livros retornados com sucesso",
     data: books.map(mapToDto),
+    // data: books,
   });
 });
 
