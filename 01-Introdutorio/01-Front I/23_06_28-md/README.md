@@ -28,5 +28,3 @@ var text = "Hello World!";
 ```
 
 <p style="padding: 20px; color: #ff00ff"> Hello</p>
-
-dsad
